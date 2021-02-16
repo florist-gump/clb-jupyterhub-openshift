@@ -25,7 +25,7 @@ $EDITOR  config/oauth.env
 Login to openshift and create a project:
 ```
 oc login <key> # You can obtain this from the web app.
-oc new project jupyterhub-env
+oc new-project jupyterhub-env
 ```
 
 Setup the templates for Jupyterhub from Jupyterhub on Openshift. These provide the templates
@@ -81,6 +81,7 @@ oc create -f security_context_constraints/mounter.yaml
 APPNAME=???
 oc adm policy add-scc-to-user scc-mounter system:serviceaccount:$APPNAME:jupyterhub-hub
 ```
+Please note that you need to be a cluster admin to execute these commands
 
 ## Updating the clb notebook image
 
